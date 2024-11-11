@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "build": "tsc",
     "check": "biome check",
     "lint": "biome lint",
     "lint-fix": "biome lint --write ./src",
