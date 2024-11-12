@@ -1,5 +1,7 @@
 {
   "name": "aibs-service",
+  "description": "aIBS Service",
+  "license": "TBD",
   "version": "0.1.0",
   "type": "module",
   "packageManager": "pnpm@9.10.0",
@@ -12,6 +14,7 @@
     "directory": "dist"
   },
   "scripts": {
+    "start": "node dist/dist/esm/index.js",
     "codegen": "build-utils prepare-v2",
     "build": "pnpm build-esm && pnpm build-annotate && pnpm build-cjs && build-utils pack-v2",
     "build-esm": "tsc -b tsconfig.build.json",
@@ -19,9 +22,14 @@
     "build-annotate": "babel build/esm --plugins annotate-pure-calls --out-dir build/esm --source-maps",
     "check": "tsc -b tsconfig.json",
     "test": "vitest",
-    "coverage": "vitest --coverage"
+    "coverage": "vitest --coverage",
+    "lint": "biome lint ./src",
+    "fix": "biome check  --write ./src",
+    "format": "biome format --write ./src"
   },
   "dependencies": {
+    "@effect/platform": "^0.69.21",
+    "@effect/platform-node": "^0.64.23",
     "effect": "latest"
   },
   "devDependencies": {
@@ -29,6 +37,7 @@
     "@babel/core": "^7.25.2",
     "@babel/plugin-transform-export-namespace-from": "^7.24.7",
     "@babel/plugin-transform-modules-commonjs": "^7.24.8",
+    "@biomejs/biome": "^1.9.4",
     "@effect/build-utils": "^0.7.7",
     "@effect/language-service": "^0.1.0",
     "@effect/vitest": "latest",
