@@ -28,7 +28,7 @@
     "format": "biome format --write ./src"
   },
   "dependencies": {
-    "@effect/platform": "^0.69.21",
+    "@effect/platform": "^0.97.1",
     "@effect/platform-node": "^0.64.23",
     "effect": "latest"
   },
